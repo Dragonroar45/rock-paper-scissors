@@ -13,3 +13,8 @@ function getHumanChoice(){
     userChoice = prompt("Please enter Rock, Paper or Scissors:", "");
     return userChoice;
 }
+
+let computerChoice = getComputerChoice();
+let humanChoice = getHumanChoice();
+let humanScore = 0;
+let computerScore = 0;
