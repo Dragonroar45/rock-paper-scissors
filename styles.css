@@ -37,6 +37,7 @@
     font-family: "Comic Neue", cursive;
     font-size: 29px;
     align-items: center;
+    padding: 20px;
 }
 
 .nav-item1{
@@ -62,4 +63,17 @@
 .nav-item2:hover{
     background-color: grey;
     cursor: grab;
+}
+
+.choices-powerups{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 200px;
+}
+
+.choices-imgs{
+    display: flex;
+    gap: 30px;
 }
