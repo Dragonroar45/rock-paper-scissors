@@ -76,4 +76,16 @@
 .choices-imgs{
     display: flex;
     gap: 30px;
+    padding-bottom: 100px;
+}
+
+.choice-img1, .choice-img2, .choice-img3{
+    border: 2px solid black;
+    padding: 10px;
+    transition-duration: 100ms;
+}
+
+.choice-img1:hover, .choice-img2:hover, .choice-img3:hover{
+    background-color: rgba(128, 128, 128, 0.247);
+    transform: scale(0.98);
 }
