@@ -5,6 +5,8 @@
 }
 .main-container{
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .logo{
@@ -70,7 +72,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 200px;
+    margin-top: 200px;
 }
 
 .choices-imgs{
@@ -112,4 +114,15 @@
     font-weight: 700;
     font-family: "Comic Neue", cursive;
     font-size: 50px;
+    transition-duration: 100ms;
+}
+
+.power-img1:hover{
+    background-color: rgba(128, 128, 128, 0.247);
+    transform: scale(0.98);
+}
+
+.power-img1:active{
+    transform: rotate(5deg);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
