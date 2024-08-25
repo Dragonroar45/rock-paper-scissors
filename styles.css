@@ -89,3 +89,27 @@
     background-color: rgba(128, 128, 128, 0.247);
     transform: scale(0.98);
 }
+
+.choice-img1:active, .choice-img2:active, .choice-img3:active{
+    transform: rotate(5deg);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.powerups.imgs{
+    display: flex;
+    justify-content: space-between;
+}
+
+.power-img1{
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+.powerup-text{
+    padding-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-family: "Comic Neue", cursive;
+    font-size: 50px;
+}
