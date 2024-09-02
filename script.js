@@ -23,6 +23,10 @@ let paper = document.querySelector(".choice-img2");
 
 let scissors = document.querySelector(".choice-img3");
 
+let round = 0;
+
+let roundDisplay = document.querySelector(".round-no");
+
 rock.addEventListener("click", () => {
     humanChoice = "rock";
     let computerChoice = getComputerChoice();
@@ -45,10 +49,27 @@ scissors.addEventListener("click", () => {
 function playRound(humanChoice, computerChoice){
     if (humanChoice === computerChoice){
         paragraph.textContent = "Its a tie!";
+        round += 1;
+        roundDisplay.textContent = `${round}`;
         humanVisualScore.textContent = humanScore;
         computerVisualScore.textContent = computerScore;
-    } 
+    } else if ((humanChoice === "rock" && computerChoice === "paper") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "scissors" && computerChoice === "paper")){
+        paragraph.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
+        humanScore += 1;
+        round += 1;
+        roundDisplay.textContent = `${round}`;
+        humanVisualScore.textContent = humanScore;
+        computerVisualScore.textContent = computerScore;
+    } else{
+        paragraph.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
+        computerScore += 1;
+        round += 1;
+        roundDisplay.textContent = `${round}`;
+        humanVisualScore.textContent = humanScore;
+        computerVisualScore.textContent = computerScore;
+    }
 }
+
 
 
 let humanChoice;
