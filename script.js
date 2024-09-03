@@ -9,6 +9,12 @@ function getComputerChoice(){
     }
 }
 
+function randomiser(){
+    let randomNum = Math.floor(Math.random() * (3-1+1)) + 1;
+    return randomNum;
+
+}
+
 let rock = document.querySelector(".choice-img1");
 
 let parentDivPara = document.querySelector(".choices-powerups");
@@ -70,6 +76,10 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
+function clairvoyance{
+    if (computerChoice === "rock"){
+    } 
+}
 
 
 let humanChoice;
