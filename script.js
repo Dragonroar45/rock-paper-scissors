@@ -15,6 +15,8 @@ function randomiser(){
 
 }
 
+let computerChoice = getComputerChoice();
+
 let rock = document.querySelector(".choice-img1");
 
 let parentDivPara = document.querySelector(".choices-powerups");
@@ -27,6 +29,8 @@ let paragraph = document.querySelector(".result");
 
 let paper = document.querySelector(".choice-img2");
 
+let clairovyance = document.querySelector(".power-img1");
+
 let scissors = document.querySelector(".choice-img3");
 
 let round = 0;
@@ -34,32 +38,27 @@ let round = 0;
 let roundDisplay = document.querySelector(".round-no");
 
 rock.addEventListener("click", () => {
-    humanChoice = "rock";
-    let computerChoice = getComputerChoice();
-    playRound(humanChoice,computerChoice);
+    playRound("rock");
 });
 
 paper.addEventListener("click", () => {
-    humanChoice = "paper";
-    let computerChoice = getComputerChoice();
-    playRound(humanChoice,computerChoice);
+    playRound("paper");
 });
 
 scissors.addEventListener("click", () => {
-    humanChoice = "scissors";
-    let computerChoice = getComputerChoice();
-    playRound(humanChoice,computerChoice);
+    playRound("scissors");
 });
 
 
-function playRound(humanChoice, computerChoice){
+
+function playRound(humanChoice){
     if (humanChoice === computerChoice){
         paragraph.textContent = "Its a tie!";
         round += 1;
         roundDisplay.textContent = `${round}`;
         humanVisualScore.textContent = humanScore;
         computerVisualScore.textContent = computerScore;
-    } else if ((humanChoice === "rock" && computerChoice === "paper") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "scissors" && computerChoice === "paper")){
+    } else if ((humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "scissors" && computerChoice === "paper")){
         paragraph.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
         humanScore += 1;
         round += 1;
@@ -74,12 +73,18 @@ function playRound(humanChoice, computerChoice){
         humanVisualScore.textContent = humanScore;
         computerVisualScore.textContent = computerScore;
     }
+    computerChoice = getComputerChoice();
 }
 
-function clairvoyance{
+clairovyance.addEventListener("click", () => {
     if (computerChoice === "rock"){
-    } 
-}
+        paragraph.textContent = "In the face of weight, everything folds";
+    } else if (computerChoice === "paper"){
+        paragraph.textContent = "A gentle touch veils its true strength"
+    } else{
+        paragraph.textContent = "Precision cuts through the fog of choices";
+    }
+});
 
 
 let humanChoice;
