@@ -1,3 +1,5 @@
+"use strict";
+
 function getComputerChoice(){
     let numComputerChoice = Math.floor(Math.random() * (3-1+1)) + 1; // 1 implies rock, 2 implies scissor, 3 implies paper
     if (numComputerChoice === 1){
@@ -37,6 +39,10 @@ let round = 0;
 
 let roundDisplay = document.querySelector(".round-no");
 
+if (round === 0){
+    roundDisplay.textContent = `${round}`;
+}
+
 rock.addEventListener("click", () => {
     playRound("rock");
 });
@@ -52,6 +58,7 @@ scissors.addEventListener("click", () => {
 
 
 function playRound(humanChoice){
+    paragraph.classList.remove("power")
     if (humanChoice === computerChoice){
         paragraph.textContent = "Its a tie!";
         round += 1;
@@ -77,6 +84,7 @@ function playRound(humanChoice){
 }
 
 clairovyance.addEventListener("click", () => {
+    paragraph.classList.add("power");
     if (computerChoice === "rock"){
         paragraph.textContent = "In the face of weight, everything folds";
     } else if (computerChoice === "paper"){
