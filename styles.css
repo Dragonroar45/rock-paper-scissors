@@ -182,3 +182,15 @@ a{
     font-weight: bold;
 }
 
+@media (max-width: 768px){
+    .logo-text{
+        font-size: 26px;
+    }
+    .img-eye{
+        width: 100px;
+    }
+    .powerup-text{
+        font-size: 35px;
+    }
+}
+
